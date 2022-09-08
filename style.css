@@ -1,0 +1,340 @@
+@font-face {
+    font-family: 'Mason';
+    font-style: normal;
+    font-weight: 400;
+    src: url('assets/fonts/Mason.ttf');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Mason';
+}
+
+body {
+    overflow: hidden;
+    font-size: 10px;
+}
+
+.main-container {
+    background-image: url(assets/png/home.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+/* Ancients */
+
+.ancients-wrapper {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 2.5;
+}
+
+.audio {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    gap: 15px;
+    padding: 5px;
+    width: 15rem;
+    z-index: 1;
+}
+
+.play {
+    width: 32px;
+    height: 32px;
+    background-image: url(assets/svg/play.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.play.pause {
+    background-image: url(assets/svg/pause.svg);
+}
+
+.volume-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.volume {
+    cursor: pointer;
+    margin: 0;
+    transform: scale(0.7);
+}
+
+#volume-slider {
+    cursor: pointer;
+    height: 20px;
+    width: 88px;
+}
+
+.anc-label {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    margin-top: 1.6rem;
+    /*flex: 1;*/
+}
+
+.ancients-container {
+    display: flex;
+    width: 100%;
+    /*flex: 1;*/
+}
+
+.ancients {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    flex: 1;
+    background-color: rgba(108, 108, 108, 0.60);
+    background-blend-mode: multiply;
+    margin: 16px 7px;
+    height: 12rem;
+    border-radius: 15px;
+}
+
+.ancients:hover {
+    background-color: rgba(108, 108, 108, 0);
+}
+
+.ancients.active {
+    box-shadow: 0 0 8px 7px brown;
+    background-color: rgba(108, 108, 108, 0);
+}
+
+.preview {
+    position: relative;
+    width: 100%;    
+    /*flex: 23;*/
+}
+
+.frameAncient {
+    position: absolute;
+    height: 40rem;
+    width: 30rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    opacity: 0;
+}
+
+.frameAncient.active {
+    opacity: 1;
+}
+
+.avatarAncient {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 32%);
+    height: 28.4rem;
+    width: 21.9rem;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+
+#azathoth, .azathoth {    
+    background-image: url(assets/Ancients/Azathoth.png);
+}
+
+#cthulhu, .cthulhu {
+    background-image: url(assets/Ancients/Cthulthu.png);
+}
+
+#iogSothoth, .iogSothoth {
+    background-image: url(assets/Ancients/IogSothoth.png);
+}
+
+#shubNiggurath, .shubNiggurath {
+    background-image: url(assets/Ancients/ShubNiggurath.png);
+}
+
+/* Difficulty */
+
+.difficulty-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 1.4rem;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.difficulty-container.active {
+    opacity: 1;
+}
+
+.diff-label {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+}
+
+button {
+    border: 2px solid brown;
+    border-radius: 1rem;
+    color: brown;
+    background-color: white;
+    cursor: pointer;
+    height: 4rem;
+    width: 80%;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+button:hover{
+    color: white;
+    border-color: #450000;
+    background-color: brown;
+}
+
+.difficulty.active {
+    color: brown;
+    border-color: chocolate;
+    background-color: orange;
+    font-weight: 800;
+}
+
+.start-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.start-game {
+    opacity: 0;
+}
+
+.start-game.active {
+    opacity: 1;
+}
+
+
+/* Deck */
+
+.playing-field {
+    display: flex;
+    flex: 3;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    min-width: 30%;
+    padding: 30px 0;
+    opacity: 0;
+}
+
+.playing-field.active {
+    opacity: 1;
+}
+
+.tracker {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.stage-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stage-text {
+    color: brown;
+    font-size: 1.4rem;
+}
+
+.stage-text.done {
+    color: rgb(104, 25, 25);
+    text-decoration: line-through;
+}
+
+.dots-container {
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.dot {
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    height: 4rem;
+    width: 4rem;
+    font-size: 1.4rem;
+    justify-content: center;
+}
+
+.dot.green {
+    background-color: green;
+}
+
+.dot.brown {
+    background-color: brown;
+}
+
+.dot.blue {
+    background-color: blue;
+}
+
+.deck-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 3;
+    width: 100%;
+    gap: 19px;
+    padding: 2.857% 0;
+}
+
+.deck,
+.last-card {
+    border-radius: 20px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*
+    width: 48%;
+    height: 100%;*/
+    width: 21rem;
+    height: 31rem;
+}
+
+.deck {
+    opacity: 1;
+    cursor: pointer;
+    background-image: url(assets/png/mythicCardBackground.png);
+}
+
+.deck.done {
+    opacity: 0;
+    cursor: default;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Древний Ужас</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
+    <link href="style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <script src="index.js" type="module" defer></script>
+</head>
+<body>
+    <div class="main">
+        <div class="main-container">
+            <div class="audio">
+                <div class="volume-container">
+                    <div class="volume-button">
+                        <div class="volume icono-volumeMedium"></div>
+                    </div>
+                    <input type="range" id="volume-slider" step=".01" min="0" max="1" value=".75" />
+                </div>
+                <div class="play"></div>
+            </div>
+            <div class="ancients-wrapper">                
+                <p class="anc-label">Выберите Древнего:</p>
+                <div class="ancients-container">
+                    <div id="azathoth" class="ancients"></div>
+                    <div id="cthulhu" class="ancients"></div>
+                    <div id="iogSothoth" class="ancients"></div>
+                    <div id="shubNiggurath" class="ancients"></div>
+                </div>
+                <div class="preview">
+                    <img class="frameAncient" src="assets/png/AncientFrame.png">
+                    <div class="avatarAncient"></div>
+                </div>
+            </div>
+            <div class="difficulty-container">
+                <p class="diff-label">Выберите сложность:</p>
+                <button id="noob" class="difficulty">Очень легкая</button>
+                <button id="easy" class="difficulty">Легкая</button>
+                <button id="normal" class="difficulty">Средняя</button>
+                <button id="hard" class="difficulty">Высокая</button>
+                <button id="amazing" class="difficulty">Очень высокая</button>
+                <div class="start-menu">
+                    <button id="start-game" class="start-game">Устроить замес</button>
+                </div>
+            </div>
+            <div class="playing-field">
+                <div class="tracker">
+                    <div class="stage-container">
+                        <span class="stage-text">Первая стадия</span>
+                        <div class="dots-container">
+                            <div class="dot green">1</div>
+                            <div class="dot brown">2</div>
+                            <div class="dot blue">1</div>
+                        </div>
+                    </div>
+                    <div class="stage-container">
+                        <span class="stage-text">Вторая стадия</span>
+                        <div class="dots-container">
+                            <div class="dot green">3</div>
+                            <div class="dot brown">2</div>
+                            <div class="dot blue">1</div>
+                        </div>
+                    </div>
+                    <div class="stage-container">
+                        <span class="stage-text">Третья стадия</span>
+                        <div class="dots-container">
+                            <div class="dot green">2</div>
+                            <div class="dot brown">4</div>
+                            <div class="dot blue">0</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="deck-container">
+                    <div class="last-card"></div>
+                    <div class="deck"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
